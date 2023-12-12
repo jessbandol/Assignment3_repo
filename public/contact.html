@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+<style>
+    body {
+    background-image: url('./images/bgsun.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-bottom: 100px; /* Add padding at the bottom of the body */
+    *{box-sizing: border-box;}
+}
+
+
+input[type=text], select, textarea {
+  width: 100%;
+  padding: 12px;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  box-sizing: border-box;
+  margin-top: 6px;
+  margin-bottom: 16px;
+  resize: vertical;
+}
+
+input[type=submit] {
+    background-color: rgb(139, 98, 26);  
+    color: white;
+    padding: 12px 20px;
+    border: none;
+    border-radius: 40px;
+    cursor: pointer;
+    font-family: 'Comfortaa', sans-serif;
+    font-size: larger;
+}
+
+input[type=submit]:hover {
+  background-color: #45a049;
+}
+
+/* font */
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+}
+
+h2 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 500;
+}
+
+p {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+/* Center align the header text */
+.header {
+    text-align: center;
+}
+
+nav li {
+    display: inline-block;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+nav ul {
+  width: fit-content; /* Set a width based on content */
+  margin: 0 auto; /* Center the nav ul */
+  padding: 0;
+  text-align: center;
+  background-color: rgb(95, 88, 79);
+  border-radius: 100px;
+}
+
+nav a {
+    color: white;
+    text-decoration: none;
+    padding: 14px 20px; /* Adjust the padding */
+    display: inline-block;
+}
+
+nav a:hover {
+    background-color: #8fb391;
+    color: white; /* Change text color on hover */
+    border-radius: 100px;
+}
+
+.container {
+    width:960px;
+    margin: auto;
+}
+
+#fname, #lname, #email, #subject {
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.container {
+    font-family: 'Comfortaa', sans-serif;
+    max-width: 600px; /* Adjust the max-width as needed */
+    margin: auto;
+}
+
+label {
+    font-family: 'Comfortaa', sans-serif;
+    display: block;
+    margin-bottom: 8px;
+}
+</style>
+
+</head>
+<body>
+    <div id="container">
+        <div class="header section">
+            <h1>cloudscape charms</h1>
+            <p>fill your life with an abundance of charm!</p>
+        
+            <nav>
+                <ul>
+                    <li><a href="index.html"><div id="home"></div>⋆˚✿˖° Home</a></li>
+                    <li><a href="products_display.html"><div id="goodies"></div>⋆˚✿˖° Products</a></li>
+                    <li><a href="contact.html"><div id="review"></div>⋆˚✿˖° Contact Us</a></li>
+                 </ul>
+            </nav>
+        </div>
+
+<br>
+<br>
+    <div class="container">
+    <h1>Contact Us</h1>
+    <form action="./index.html">
+    <!--Code from W3 Schools-->
+        <label for="fname">First Name</label>
+        <input type="text" id="fname" name="firstname" placeholder="Your name..">
+
+        <label for="lname">Last Name</label>
+        <input type="text" id="lname" name="lastname" placeholder="Your last name..">
+
+        <label for="email">Email</label>
+        <input type="text" id="email" name="email" placeholder="Email Address">
+
+        <label for="subject">Subject</label>
+        <textarea id="subject" name="subject" placeholder="Write something.." style="height:200px"></textarea>
+
+        <input type="submit" value="Submit">
+    </form>
+    </div>
+
+</body>
+</html>

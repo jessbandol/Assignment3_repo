@@ -1,0 +1,89 @@
+body {
+    background-image: url('./images/bgsunpd.png');
+    background-size: cover;
+    background-repeat: no-repeat;
+    padding-top: 50px;
+  }
+
+/* Center the table on the page */
+table {
+    margin: auto;
+}
+
+.subtotal-row td {
+    padding-top: 30px;
+}
+
+.total td {
+    border-top: 3px solid rgb(241, 232, 170);
+}
+
+table {
+    width: 60%;
+    font-family: 'Comfortaa', sans-serif;
+}
+
+th {
+    background-color: #f2f2f2;
+    font-weight: bold;
+    font-size: 20px;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+    border-bottom: 2px solid black;
+}
+
+td {
+    line-height: 1.4;
+    padding-left: 10px;
+    padding-right: 10px;
+    text-align: left;
+}
+
+h1 {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    text-align: center;
+    font-size: 60px;
+}
+
+/* button */
+.purchase-btn {
+    border: none; 
+    background-color: rgb(139, 98, 26);    
+    border-radius: 40px;
+    margin: 50px 10px; /* Vertical margin of 20px and horizontal margin of 10px */
+    font-size: 20px;   /* Larger font size */
+    padding: 10px 20px; /* Padding around the button to make it bigger */
+    text-align: center; /* Ensures text inside the button is centered */
+    color: rgb(251, 253, 255);
+    font-family: 'Comfortaa', sans-serif;
+}
+
+.purchase-btn:hover {
+    background-color: rgb(247, 218, 170); /* Sets a darker blue as background on hover */
+    color: rgb(139, 98, 26);             /* Keeps text color white */
+    font-family: 'Comfortaa', sans-serif;
+}
+
+form {
+    display: inline-block;
+    margin: 0 auto;           /* Remove default form margin */
+}
+
+footer {
+    text-align: center;
+}
+
+a {
+    text-decoration: none;
+}
+
+#personalizationMessage {
+    font-family: 'Fredoka', sans-serif;
+    font-weight: 700;
+    font-size: 20px;
+    text-align: center;
+    margin-bottom: 20px; /* Adjust as needed for spacing */
+    color: #77b27b;
+}
