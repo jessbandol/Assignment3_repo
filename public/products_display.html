@@ -3,7 +3,11 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Product Page</title>
+    <title>Bracelets</title>
+
+    <script src="./pdsp.js"></script>   
+    <script type="text/javascript" src="./functions.js"></script>
+    <script type="text/javascript" src="./navbar.js"></script>
 
     <link rel="stylesheet" href="pdsp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -15,33 +19,44 @@
     <div class="header section">
         <h1>cloudscape charms</h1>
         <p>fill your life with an abundance of charm!</p>
+    
+          <div id = "sticky-navbar">
+              <a class = "nav-link mx-3 highlight" href="/cart.html">
+                  <span id="cart_total"></span>Cart
+              </a>
+          </div>
+    
+          <div id = "nav_container"></div>
+    
+          <nav class = "navbar navbar-expand-md">
+            <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            </button>
+    
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+              <div class="navbar-nav">
+                <li><a class="nav-link mx-3 highlight" href="/index.html" active>Home</a></li>
+                <script>nav_bar(products_key, products)</script>
+              </div>
+            </div>
+          </nav>
 
-        <nav>
-            <ul>
-                <li><a href="index.html"><div id="home"></div>⋆˚✿˖° Home</a></li>
-                <li><a href="products_display.html"><div id="goodies"></div>⋆˚✿˖° Products</a></li>
-                <li><a href="contact.html"><div id="review"></div>⋆˚✿˖° Contact Us</a></li>
-             </ul>
-        </nav>
+        <div id="WelcomeMsg"></div>
     </div>
 
-    <div id="WelcomeMsg"></div>
     <div id="errMsg"></div>
     
-    <div id="container">
-        <form action="process_form" method="POST" name="qty_form">
+    <div class="container">
+        <form action="/add_to_cart" method="POST" name="qty_form" class="qty_form">
         <input type="hidden" name="username" id="usernameEntered">
         <input type="hidden" name="email" id="email">
-            <div>
-                <main class="main">
-                    <!-- Dynamic product sections will be added here using JavaScript -->
-                </main>
-            </div>
-            <footer>
-                <input type="submit" value="Purchase" class="purchase-btn">	  
-            </footer>
-        <script type="text/javascript" src="./pdsp.js"></script>        
+            <script>
+                document.write(`<input type="hidden" name="products_key" value="${products_key}">`);
+            </script>  
+            
+        <div class="row"></div>
         </form>   
-    </div> 
+    <script src="/pdsp.js"></script>
+    <script src="/cart.js"></script>
+    </div>  
 </body>
 </html>

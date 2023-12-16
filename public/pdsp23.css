@@ -48,10 +48,13 @@ p {
 }
 
 .item img {
-    width: 210px;
-    height: 270px;
-    border-radius: 70px;
+    width: 280px;
+    border-radius: 50px;
     box-shadow: 5px 5px 40px rgba(253, 246, 186, 0.692); /* Adjust values as needed */
+    align-self: center;
+    margin-bottom: 15px;
+    margin-left: 10px;
+    margin-right: 10px;
 }
 
 /* div products */
@@ -73,7 +76,6 @@ p {
   .main {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
-    gap: 2px;
   }
 
   .purchase-btn {
@@ -93,11 +95,6 @@ p {
     justify-content: center; /* center children vertically */
   }
   
-  /* If your images aren't already centered by default, you can add this */
-  .item img {
-    align-self: center;
-    margin-bottom: 15px;
-  }
   
 /* button */
   .purchase-btn {
@@ -190,7 +187,7 @@ nav a:hover {
 
 #container {
   text-align:center;
-  width:800px;
+  width:1000px;
   margin: auto;
 }
 
@@ -212,24 +209,3 @@ nav a:hover {
     background-color: #ddd;
     outline: none;
   }
-
-  .errorBox {
-    width: 100%; 
-    height: 40px; 
-    margin-top: 5px;
-    color: #ff2e2e;
-    padding-top: 3px;
-    line-height: 95%;
-  }
-
-/*cart*/
-.shopping {
-  position: relative;
-  text-align: right;
-}
-
-.shopping img {
-  width: 100px; /* Set the width as per your requirement */
-  margin-top: 5px; /* Adjust the top margin */
-  margin-right: 5px; /* Adjust the right margin */
-}

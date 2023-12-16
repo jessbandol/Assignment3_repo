@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Cart</title>
+
+    <script type="text/javascript" src="./functions.js"></script>
+    <script type="text/javascript" src="./navbar.js"></script>
+
+    <link rel="stylesheet" href="invoice.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+</head>
+
+<div class="header section">
+    <h1>cloudscape charms</h1>
+    <p>fill your life with an abundance of charm!</p>
+
+      <div id = "sticky-navbar">
+          <a class = "nav-link mx-3 highlight" href="/cart.html">
+              <span id="cart_total"></span>Cart
+          </a>
+      </div>
+
+      <div id = "nav_container"></div>
+
+      <nav class = "navbar navbar-expand-md">
+        <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <div class="navbar-nav">
+            <li><a class="nav-link mx-3 highlight" href="/index.html" active>Home</a></li>
+            <script>nav_bar(products_key, products)</script>
+          </div>
+        </div>
+      </nav>
+  </div>
+
+<div class="container mt-3">
+    <h2>🛒 Current shopping cart:</h2>
+    <form method="POST" name="cart_form" action="/update_shopping_cart">
+        <div id ="cart_info" name="cart_info"></div>
+        <input type="submit" id="cartUpadte" value="Update Cart" class="sm-button highlight">
+    </form> <br>
+    <form action="/checkout" method="GET">
+        <input type="submit" id="cartSubmit" value="Check out" class="sm-button highlight">
+    </form>
+    <div id="tax_info"></div>
+</div>
+
+<script src="cart.js"></script>
+
+<style>
+    body {
+background-image: url('./images/bgsunh.png');
+background-size: cover;
+background-repeat: no-repeat;
+padding-bottom: 100px; /* Add padding at the bottom of the body */
+}
+</style>
+</html>

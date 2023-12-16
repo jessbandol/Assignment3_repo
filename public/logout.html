@@ -40,33 +40,34 @@
           </nav>
     </div>
 
-    <form action="/process_login" method="POST" name="login_form">
+    <form name="invoice" method="POST">
         <div class="container">
-            <h1>Login</h1>
-            <p>Access your account to checkout items.</p>
-
-            <input type="text" placeholder="Email" name="email" id="email"  class="input">
-            <input type="password" placeholder="Password" name="password" id="password" class="input">
-
-            <!-- Placeholder for error message -->
-            <div id="errMsg" style="color: red;"></div>
-
-            <button type="submit" class="loginbtn">Login</button>
+            <h1>See you soon!</h1>
+            <p>Feel free to continue browsing the store!</p>
         </div>
 
-        <div class="container signin">
-            <p>Create a new account <a href="register.html">here</a>.</p>
-        </div>
+        <input type="hidden" name="email" id="email">
+        <input type="submit" value="Continue Shopping" name="continue" onclick="invoice.action='/continue'" style="width: 40%;">
+        <input type="submit" value="Logout" name="logout" onclick="invoice.action='/process_logout'" style="width: 40%;">
     </form>
 
     <script>
     //sals code
-    window.onload = function() {
-        let params = (new URL(document.location)).searchParams;
-        if (params.has('loginErr')) {
-            document.getElementById('errMsg').innerHTML = params.get('loginErr')
-        }
-        document.getElementById('email').value = params.get('email');
+    if (getCookie('user_cookie') != false) {
+        user_cookie = getCookie('user_cookie');
+
+        document.getElementsById('verify').innerHtml = `
+            <h3>Are you sure you want to leave?</p>
+        `;
+
+        document.getElementById('logout_button').addEventListener('click', function() {
+            document.cookie='user_cookie=; expires=Thu, 01 Jan 1970 00:00:00 UTC; path=/;';
+
+            location.href = './login.html';
+        });
+    } else {
+        location.href='./login.html';
+        window.stop;
     }
     </script>
 </body>

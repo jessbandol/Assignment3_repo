@@ -1,5 +1,7 @@
 {
-  "itm352@hawaii.edu":{"name":"ITM 352","password":"grader"},
+  "itm352@hawaii.edu":
+  {"name":"ITM 352","password":"grader", "status": false},
   
-  "jmbandol@hawaii.edu":{"name":"Jess","password":"jess"}
+  "jmbandol@hawaii.edu":
+  {"name":"Jess","password":"jess", "status": false}
 }

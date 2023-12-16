@@ -13,10 +13,12 @@
     <title>Purchase Receipt</title>
 </head>
 <body>
-    <h1>Your Cart 🛒</h1>
+    <h1>Purchase Reciept</h1>
 
     <div id="personalizationMessage"></div>
 
+    <h2 id="verify" style="color: red;"></h2>
+    
     <table>
         <thead>
             <tr>
@@ -32,41 +34,16 @@
         <tbody id="total_display">
              <!-- Product rows will be added dynamically using JavaScript -->
         </tbody>
-
-        <!-- 
-        <tfoot>
-            <tr>
-                <td colspan="3">Sub-total</td>
-                <td id="subtotal_cell">$0.00</td>
-            </tr>            
-            <tr>
-                <td colspan="3">Tax @ 5.75%</td>
-                <td id="tax_cell">$0.00</td>
-            </tr>
-            <tr>
-                <td colspan="3">Shipping</td>
-                <td id="shipping_cell"></td>
-            </tr>   
-            <tr class="total">
-                <td colspan="3"><b>Total</b></td>
-                <td id="total_cell"><b>$0.00</b></td>
-            </tr>        
-        </tfoot>
-        -->
     </table>
-    <footer>
 
-     <!-- Continue Shopping button -->
-    <form action="/continue_shopping" method="post">
-        <input type="submit" value="Continue Shopping" class="purchase-btn">
-    </form>
+    <div class="buttons-container">
+        <form name="invoice" method="POST">
+            <input type="hidden" name="email" id="email">
+            <input class="sm-button highlight" type="submit" value="Containing Shopping" name="continue" onclick="invoice.action='/continue'" style="width: 40%;">
+            <input class="sm-button highlight" type="submit" value="Complete Purchase" name="logout" onclick="invoice.action='/complete_purchase'" style="width: 40%;">
+        </form>
+    </div>
 
-    <!-- Finish Shopping button -->
-    <form action="/purchase_logout" method="post">
-        <input type="submit" value="Finish Shopping" class="purchase-btn">
-    </form>
-  
-    </footer>
     <script src="invoice.js" type="module"></script>
 </body>
 </html>
