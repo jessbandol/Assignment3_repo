@@ -1,8 +1,9 @@
 const express = require('express');
 const app = express();
 
+
 //ASSIGNMENT 3
-const session = require('express-sesson');
+const session = require('express-session');
 app.use(session({secret: "myNotSoSecretKey", resave: true, saveUninitialized: true}));
 const cookieParser = require('cookie-parser');
 const {request} = require('http');
@@ -169,7 +170,7 @@ app.post('/process_login', function(request, response) {
 // Store registration erros; assume no errors at first
 let registration_errors = {};
 
-app.post('/register', function(request, response) {
+app.post('/process_register', function(request, response) {
 	// Get user's inputs from registration form
 	let reg_name = request.body.name;
 	let reg_email = request.body.email.toLowerCase();

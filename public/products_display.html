@@ -5,58 +5,66 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bracelets</title>
 
-    <script src="./pdsp.js"></script>   
-    <script type="text/javascript" src="./functions.js"></script>
-    <script type="text/javascript" src="./navbar.js"></script>
-
     <link rel="stylesheet" href="pdsp.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Fredoka:wght@500;700&display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css2?family=Comfortaa:wght@700&display=swap" rel="stylesheet">
+
+    <!-- Load product data -->
+    <script>
+        let products;
+        loadJSON('/path/to/products.json', function(response) {
+            products = JSON.parse(response);
+        });
+    </script>
 </head>
 <body>
     <div class="header section">
         <h1>cloudscape charms</h1>
         <p>fill your life with an abundance of charm!</p>
-    
-          <div id = "sticky-navbar">
-              <a class = "nav-link mx-3 highlight" href="/cart.html">
-                  <span id="cart_total"></span>Cart
-              </a>
-          </div>
-    
-          <div id = "nav_container"></div>
-    
-          <nav class = "navbar navbar-expand-md">
+
+        <div id="sticky-navbar">
+            <a class="nav-link mx-3 highlight" href="/cart.html">
+                <span id="cart_total"></span>Cart
+            </a>
+        </div>
+
+        <div id="nav_container"></div>
+
+        <nav class="navbar navbar-expand-md">
             <button class="navbar-toggler" id="toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
             </button>
-    
+
             <div class="collapse navbar-collapse" id="navbarSupportedContent">
-              <div class="navbar-nav">
-                <li><a class="nav-link mx-3 highlight" href="/index.html" active>Home</a></li>
-                <script>nav_bar(products_key, products)</script>
-              </div>
+                <div class="navbar-nav">
+                    <li><a class="nav-link mx-3 highlight" href="/index.html" active>Home</a></li>
+                    <!-- The nav_bar function will be called from navbar.js -->
+                </div>
             </div>
-          </nav>
+        </nav>
 
         <div id="WelcomeMsg"></div>
     </div>
 
     <div id="errMsg"></div>
-    
+
     <div class="container">
-        <form action="/add_to_cart" method="POST" name="qty_form" class="qty_form">
-        <input type="hidden" name="username" id="usernameEntered">
-        <input type="hidden" name="email" id="email">
+        <form action="/add_to_cart" method="GET" name="qty_form" class="qty_form">
+            <input type="hidden" name="username" id="usernameEntered">
+            <input type="hidden" name="email" id="email">
             <script>
                 document.write(`<input type="hidden" name="products_key" value="${products_key}">`);
-            </script>  
-            
-        <div class="row"></div>
-        </form>   
-    <script src="/pdsp.js"></script>
+            </script>
+
+            <div class="row"></div>
+        </form>
+    </div>
+
+    <!-- Include scripts at the end to ensure elements are available -->
+    <script type="text/javascript" src="./pdsp.js"></script>
+    <script type="text/javascript" src="./functions.js"></script>
+    <script type="text/javascript" src="./navbar.js"></script>    
     <script src="/cart.js"></script>
-    </div>  
 </body>
 </html>
